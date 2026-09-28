@@ -624,3 +624,28 @@ flowchart LR
 README не должен утверждать больше, чем подтверждают код, тесты и сохранённые артефакты. Для рыночных/экономических проектов backtest или внутренняя переоценка не равны реализованной внешней прибыли; для AI/infra проектов benchmark или диаграмма не равны production-надежности.
 
 <!-- SYNERGY-FEDERATION-PASSPORT:END -->
+
+---
+
+# 💱 Глубокий доказательный паспорт Cross-FX Arbitrage
+
+## Критическое различие
+
+Синтетическое несоответствие цены ≠ исполнимый arbitrage. Для triangular/cross-FX исполнения все legs должны использовать synchronized bid/ask, доступный объём, latency и одинаковую settlement basis.
+
+```mermaid
+flowchart LR
+    Q[Synced quotes] --> SYN[Synthetic cross]
+    SYN --> DIFF[Price discrepancy]
+    DIFF --> COST[Spread/commission/slippage]
+    COST --> CAP[Capacity]
+    CAP --> EXEC[Executable candidate]
+```
+
+## Legacy README risk
+
+Фиксированные TP/SL после обнаружения discrepancy превращают чистый arbitrage thesis в directional trade simulation. Такие результаты нельзя описывать как arbitrage PnL без отдельного анализа.
+
+## Следующий рубеж
+
+tick-synchronized quote snapshots → atomic leg model → capacity/latency → no directional TP/SL dependency → shadow execution → reconciliation.
