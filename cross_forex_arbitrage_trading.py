@@ -57,10 +57,10 @@ class ForexArbitrageSystem:
     def initialize_mt5(self):
         """Initialize connection to MetaTrader 5."""
         if not mt5.initialize(path=self.terminal_path):
-            print(f"❌ Failed to connect to MT5 at {self.terminal_path}")
+            print(f" Failed to connect to MT5 at {self.terminal_path}")
             print(f"Error: {mt5.last_error()}")
             return False
-        print(f"✅ Connected to MT5. Version: {mt5.version()}")
+        print(f" Connected to MT5. Version: {mt5.version()}")
         return True
     
     def shutdown_mt5(self):
@@ -79,7 +79,7 @@ class ForexArbitrageSystem:
         Returns:
             dict: {symbol: DataFrame} with OHLC data
         """
-        print(f"\n📊 Loading historical data from {start_date.date()} to {end_date.date()}...")
+        print(f"\n Loading historical data from {start_date.date()} to {end_date.date()}...")
         
         if not self.initialize_mt5():
             return None
@@ -109,7 +109,7 @@ class ForexArbitrageSystem:
                 print(f"  ✗ {symbol}: No data available")
         
         self.shutdown_mt5()
-        print(f"\n✅ Loaded {len(historical_data)} currency pairs")
+        print(f"\n Loaded {len(historical_data)} currency pairs")
         return historical_data
     
     def calculate_synthetic_prices(self, data):
@@ -227,7 +227,7 @@ class ForexArbitrageSystem:
         Returns:
             tuple: (equity_curve, trades_log)
         """
-        print(f"\n🔄 Starting backtest from {start_date.date()} to {end_date.date()}...")
+        print(f"\n Starting backtest from {start_date.date()} to {end_date.date()}...")
         
         equity_curve = [self.initial_capital]
         trades_log = []
@@ -307,9 +307,9 @@ class ForexArbitrageSystem:
                     equity_curve.append(equity_curve[-1] + trade_result['profit'])
             
             if current_date.day % 7 == 0:
-                print(f"  📅 Processed: {current_date.date()} | Trades: {len(trades_log)} | Equity: ${equity_curve[-1]:.2f}")
+                print(f"   Processed: {current_date.date()} | Trades: {len(trades_log)} | Equity: ${equity_curve[-1]:.2f}")
         
-        print(f"\n✅ Backtest completed!")
+        print(f"\n Backtest completed!")
         return equity_curve, trades_log
     
     def generate_report(self, equity_curve, trades_log):
@@ -317,7 +317,7 @@ class ForexArbitrageSystem:
         Generate performance statistics and visualizations.
         """
         if not trades_log:
-            print("⚠️ No trades executed during backtest period.")
+            print(" No trades executed during backtest period.")
             return
         
         trades_df = pd.DataFrame(trades_log)
@@ -343,27 +343,27 @@ class ForexArbitrageSystem:
         
         # Print report
         print("\n" + "="*70)
-        print("📊 BACKTEST PERFORMANCE REPORT")
+        print(" BACKTEST PERFORMANCE REPORT")
         print("="*70)
-        print(f"\n💰 PROFIT & LOSS")
+        print(f"\n PROFIT & LOSS")
         print(f"  Initial Capital:        ${self.initial_capital:,.2f}")
         print(f"  Final Equity:           ${equity_curve[-1]:,.2f}")
         print(f"  Total Profit:           ${total_profit:,.2f}")
         print(f"  Return on Investment:   {((equity_curve[-1] - self.initial_capital) / self.initial_capital * 100):.2f}%")
         
-        print(f"\n📈 TRADE STATISTICS")
+        print(f"\n TRADE STATISTICS")
         print(f"  Total Trades:           {total_trades}")
         print(f"  Winning Trades:         {winning_trades}")
         print(f"  Losing Trades:          {losing_trades}")
         print(f"  Win Rate:               {win_rate:.2f}%")
         
-        print(f"\n💵 AVERAGE PERFORMANCE")
+        print(f"\n AVERAGE PERFORMANCE")
         print(f"  Average Profit/Trade:   ${avg_profit:.2f}")
         print(f"  Average Win:            ${avg_win:.2f}")
         print(f"  Average Loss:           ${avg_loss:.2f}")
         print(f"  Profit Factor:          {profit_factor:.2f}")
         
-        print(f"\n📉 RISK METRICS")
+        print(f"\n RISK METRICS")
         print(f"  Max Drawdown:           ${max_drawdown:.2f}")
         print(f"  Max Drawdown %:         {max_drawdown_pct:.2f}%")
         
@@ -395,7 +395,7 @@ class ForexArbitrageSystem:
         plt.tight_layout()
         plt.savefig('equity_curve.png', dpi=150)
         plt.close()
-        print("\n📊 Equity curve saved as 'equity_curve.png'")
+        print("\n Equity curve saved as 'equity_curve.png'")
     
     def plot_trade_distribution(self, trades_df):
         """Plot profit distribution histogram."""
@@ -410,13 +410,13 @@ class ForexArbitrageSystem:
         plt.tight_layout()
         plt.savefig('profit_distribution.png', dpi=150)
         plt.close()
-        print("📊 Profit distribution saved as 'profit_distribution.png'")
+        print(" Profit distribution saved as 'profit_distribution.png'")
 
 
 def main():
     """Main execution function."""
     print("\n" + "="*70)
-    print("🚀 FOREX ARBITRAGE SYSTEM - BACKTEST")
+    print(" FOREX ARBITRAGE SYSTEM - BACKTEST")
     print("="*70)
     
     # Initialize system
@@ -430,7 +430,7 @@ def main():
     historical_data = system.get_historical_data(start_date, end_date)
     
     if historical_data is None or len(historical_data) == 0:
-        print("❌ Failed to load historical data. Exiting.")
+        print(" Failed to load historical data. Exiting.")
         return
     
     # Run backtest
@@ -439,7 +439,7 @@ def main():
     # Generate report
     system.generate_report(equity_curve, trades_log)
     
-    print("\n✅ Analysis complete!")
+    print("\n Analysis complete!")
 
 
 if __name__ == "__main__":
