@@ -1,4 +1,4 @@
-# 💱 Forex Arbitrage System - Synthetic Currency Engine
+#  Forex Arbitrage System - Synthetic Currency Engine
 
 ## What is this?
 
@@ -10,7 +10,7 @@ This is **legal arbitrage** - no high-frequency infrastructure needed, no latenc
 
 ---
 
-## 🎯 Key Features
+##  Key Features
 
 ### Synthetic Price Calculation
 
@@ -44,7 +44,7 @@ Each pair has two calculation methods (conservative bid/ask and aggressive bid/b
 
 ---
 
-## 📊 How It Works
+##  How It Works
 
 ### 1. Data Collection
 
@@ -109,7 +109,7 @@ Maintains equity curve across all trades:
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Requirements
 ```bash
@@ -153,7 +153,7 @@ The system will:
 
 ---
 
-## 📈 Performance Metrics
+##  Performance Metrics
 
 ### Typical Backtest Results (Jan-Aug 2024)
 
@@ -189,7 +189,7 @@ The edge is small (0.8-2 pips) but systematic. With proper execution, it compoun
 
 ---
 
-## 🔬 Technical Deep Dive
+##  Technical Deep Dive
 
 ### Synthetic Price Calculation Methods
 
@@ -239,7 +239,7 @@ This captures opportunities even when absolute arbitrage doesn't exist.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 ```
 forex-arbitrage-system/
 │
@@ -258,7 +258,7 @@ forex-arbitrage-system/
 
 ---
 
-## 🛠️ Advanced Features
+##  Advanced Features
 
 ### Portfolio Optimization
 
@@ -315,7 +315,7 @@ class LiveArbitrageTrader(ForexArbitrageSystem):
 
 ---
 
-## ⚠️ Important Considerations
+##  Important Considerations
 
 ### Execution Challenges
 
@@ -369,7 +369,7 @@ With $1,000, risk management becomes difficult and a few losing trades can be de
 
 ---
 
-## 🔮 Future Development
+##  Future Development
 
 Planned enhancements:
 
@@ -399,7 +399,7 @@ Planned enhancements:
 
 ---
 
-## 📚 Mathematical Foundation
+##  Mathematical Foundation
 
 ### Interest Rate Parity
 
@@ -449,7 +449,7 @@ Spread costs are the main friction. The system models this explicitly.
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions welcome! Areas for improvement:
 
@@ -479,13 +479,13 @@ To contribute:
 
 ---
 
-## 📄 License
+##  License
 
 MIT License. Use freely with attribution.
 
 ---
 
-## ⚠️ Disclaimer
+##  Disclaimer
 
 **This is for educational and research purposes only.** 
 
@@ -509,7 +509,7 @@ The author is not responsible for any losses incurred from using this system.
 
 ---
 
-## 👤 About Me
+##  About Me
 
 **Yevgeniy Koshtenko**
 
@@ -523,7 +523,7 @@ Qualified investor (Kazakhstan & Russia). Algorithmic trading specialist since 2
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **MetaTrader 5** for providing robust API for market data access
 - **Quantitative finance community** for arbitrage theory and implementations
@@ -531,80 +531,80 @@ Qualified investor (Kazakhstan & Russia). Algorithmic trading specialist since 2
 
 ---
 
-**⭐ If this system helps your trading or research, please star the repo!**
+** If this system helps your trading or research, please star the repo!**
 
 ---
 
-## 📊 Sample Output
+##  Sample Output
 ```
 ======================================================================
-🚀 FOREX ARBITRAGE SYSTEM - BACKTEST
+ FOREX ARBITRAGE SYSTEM - BACKTEST
 ======================================================================
 
-📊 Loading historical data from 2024-01-01 to 2024-08-31...
+ Loading historical data from 2024-01-01 to 2024-08-31...
   ✓ AUDUSD: 245,832 bars loaded
   ✓ EURUSD: 246,104 bars loaded
   ✓ GBPUSD: 245,967 bars loaded
   ... [22 more pairs]
 
-✅ Loaded 25 currency pairs
+ Loaded 25 currency pairs
 
-🔄 Starting backtest from 2024-01-01 to 2024-08-31...
-  📅 Processed: 2024-01-07 | Trades: 12 | Equity: $10,245.00
-  📅 Processed: 2024-01-14 | Trades: 28 | Equity: $10,687.00
+ Starting backtest from 2024-01-01 to 2024-08-31...
+   Processed: 2024-01-07 | Trades: 12 | Equity: $10,245.00
+   Processed: 2024-01-14 | Trades: 28 | Equity: $10,687.00
   ... [continuing through August]
 
-✅ Backtest completed!
+ Backtest completed!
 
 ======================================================================
-📊 BACKTEST PERFORMANCE REPORT
+ BACKTEST PERFORMANCE REPORT
 ======================================================================
 
-💰 PROFIT & LOSS
+ PROFIT & LOSS
   Initial Capital:        $10,000.00
   Final Equity:           $16,842.00
   Total Profit:           $6,842.00
   Return on Investment:   68.42%
 
-📈 TRADE STATISTICS
+ TRADE STATISTICS
   Total Trades:           342
   Winning Trades:         218
   Losing Trades:          124
   Win Rate:               63.74%
 
-💵 AVERAGE PERFORMANCE
+ AVERAGE PERFORMANCE
   Average Profit/Trade:   $20.01
   Average Win:            $42.35
   Average Loss:           -$18.72
   Profit Factor:          2.26
 
-📉 RISK METRICS
+ RISK METRICS
   Max Drawdown:           $1,247.00
   Max Drawdown %:         11.85%
 
 ======================================================================
 
-📊 Equity curve saved as 'equity_curve.png'
-📊 Profit distribution saved as 'profit_distribution.png'
+ Equity curve saved as 'equity_curve.png'
+ Profit distribution saved as 'profit_distribution.png'
 
-✅ Analysis complete!
+ Analysis complete!
 ```
 
 
 <!-- SYNERGY-FEDERATION-PASSPORT:START -->
 ---
 
-## 🧭 SYNERGY federation passport
+##  SYNERGY federation passport
 
-**Домен:** 📈 Trading / cross-FX graph  
+**Домен:**  Trading / cross-FX graph  
 **Архитектурный родитель:** [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai)  
 **Архитектурный корень:** [`synergy_system`](https://github.com/Shtenco/synergy_system)
 
 ```mermaid
 flowchart LR
-    SYS[🧭 synergy_system] --> P[synergy_midas_ai]
+    SYS[ synergy_system] --> P[synergy_midas_ai]
     P --> THIS[cross_forex_arbitrage_trading_metatrader_5]
-    THIS --> E[📦 Evidence / outputs]
+    THIS --> E[ Evidence / outputs]
 ```
 
 Связь выше показывает место в федерации и **не является доказательством runtime dependency**. Фактические зависимости должны подтверждаться импортами, API-контрактами, manifests, deployment-конфигурацией или тестами.
@@ -615,9 +615,9 @@ flowchart LR
 
 ### Навигация
 
-- [📚 Атлас всех 75 репозиториев](https://github.com/Shtenco/synergy_system/blob/main/docs/SYNERGY_REPOSITORY_ATLAS.md)
-- [🧾 Машиночитаемый registry](https://github.com/Shtenco/synergy_system/blob/main/registry/SYNERGY_REPOSITORIES.json)
-- [🧭 SYNERGY SYSTEM](https://github.com/Shtenco/synergy_system)
+- [ Атлас всех 75 репозиториев](https://github.com/Shtenco/synergy_system/blob/main/docs/SYNERGY_REPOSITORY_ATLAS.md)
+- [ Машиночитаемый registry](https://github.com/Shtenco/synergy_system/blob/main/registry/SYNERGY_REPOSITORIES.json)
+- [ SYNERGY SYSTEM](https://github.com/Shtenco/synergy_system)
 
 ### Общее правило утверждений
 
@@ -627,7 +627,7 @@ README не должен утверждать больше, чем подтве�
 
 ---
 
-# 💱 Глубокий доказательный паспорт Cross-FX Arbitrage
+#  Глубокий доказательный паспорт Cross-FX Arbitrage
 
 ## Критическое различие
 
